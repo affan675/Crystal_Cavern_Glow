@@ -1,0 +1,352 @@
+/* Universal Styles */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color); /* Uses CSS variables */
+  transition:
+    background-color 0.8s ease,
+    color 0.8s ease; /* Smooth transitions */
+  overflow-x: hidden; /* Prevent horizontal scroll from crystalline elements */
+}
+
+/* Theme Variables (Default: Day Mode) */
+body.theme-day {
+  --bg-gradient-start: #e0f2f7; /* Light sky blue */
+  --bg-gradient-end: #c9e8f0; /* Slightly darker blue */
+  --hero-bg-color: rgba(255, 255, 255, 0.1); /* Very subtle transparent white */
+  --text-color: #333;
+  --button-bg: linear-gradient(135deg, #a7d9ff, #7dc2ff); /* Blue gradient */
+  --button-text: #fff;
+  --button-hover-bg: linear-gradient(135deg, #7dc2ff, #a7d9ff);
+  --crystal-color-base: rgba(173, 216, 230, 0.7); /* Light blue-grey */
+  --crystal-color-highlight: rgba(240, 248, 255, 0.8); /* Alice Blue */
+  --shimmer-color-1: rgba(255, 255, 255, 0.2);
+  --shimmer-color-2: rgba(255, 255, 255, 0.05);
+  --glow-color: #bbdfff; /* Soft light blue glow */
+}
+
+/* Night Mode Theme Variables */
+body.theme-night {
+  --bg-gradient-start: #0a192f; /* Deep dark blue */
+  --bg-gradient-end: #172a45; /* Slightly lighter dark blue */
+  --hero-bg-color: rgba(0, 0, 0, 0.2); /* Subtle transparent black */
+  --text-color: #e0f2f7; /* Light text */
+  --button-bg: linear-gradient(
+    135deg,
+    #6a0572,
+    #ab23ab
+  ); /* Deep purple gradient */
+  --button-text: #fff;
+  --button-hover-bg: linear-gradient(135deg, #ab23ab, #6a0572);
+  --crystal-color-base: rgba(106, 5, 114, 0.6); /* Darker purple */
+  --crystal-color-highlight: rgba(187, 0, 187, 0.7); /* Bright magenta */
+  --shimmer-color-1: rgba(255, 255, 255, 0.1);
+  --shimmer-color-2: rgba(255, 255, 255, 0.03);
+  --glow-color: #cc00ff; /* Vibrant purple glow */
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative; /* For absolute positioning of particles and crystals */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(
+    45deg,
+    var(--bg-gradient-start),
+    var(--bg-gradient-end)
+  );
+  overflow: hidden; /* Keep crystals and particles within bounds */
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.2); /* Inner shadow for depth */
+}
+
+.hero-section .content {
+  position: relative; /* Ensure content is above particles/crystals */
+  z-index: 2; /* Higher than particles and crystals */
+  background-color: var(--hero-bg-color);
+  padding: 30px 50px;
+  border-radius: 15px;
+  backdrop-filter: blur(5px); /* Refracted light effect */
+  -webkit-backdrop-filter: blur(5px); /* For Safari */
+  box-shadow: 0 0 30px var(--glow-color); /* Soft initial glow */
+  animation: pulseGlow 4s infinite alternate ease-in-out; /* Pulsing glow */
+}
+
+.hero-section h1 {
+  font-size: 3.5em;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px var(--glow-color); /* Text glow */
+  transition: text-shadow 0.8s ease;
+}
+
+.hero-section p {
+  font-size: 1.2em;
+  max-width: 600px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  padding: 12px 25px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  background: var(--button-bg);
+  color: var(--button-text);
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle:hover {
+  background: var(--button-hover-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Sound Toggle Button Styling */
+#soundToggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  background: var(--button-bg);
+  color: var(--button-text);
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+
+#soundToggle:hover {
+  transform: scale(1.05);
+}
+
+/* Lantern/Flashlight Effect */
+#lantern-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--glow-color) 0%, transparent 70%);
+  opacity: 0.15;
+  pointer-events: none; /* Crucial: clicks pass through to elements below */
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  mix-blend-mode: screen;
+  transition: opacity 0.8s ease;
+}
+
+body.theme-day #lantern-glow {
+  opacity: 0.05; /* Subtler in day mode */
+}
+
+/* Scroll Reveal Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1.2s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Parallax Performance Optimization */
+.parallax {
+  will-change: transform;
+}
+
+/* Particles.js Container (if used) */
+.particles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Below content, above background */
+  pointer-events: none; /* Allow clicks to pass through to content */
+}
+
+/* Crystalline Structures */
+.crystal {
+  position: absolute;
+  background: linear-gradient(
+    45deg,
+    var(--crystal-color-base) 0%,
+    var(--crystal-color-highlight) 50%,
+    var(--crystal-color-base) 100%
+  );
+  border-radius: 5px; /* Slight rounding for a smoother look */
+  filter: drop-shadow(0 0 10px var(--glow-color)); /* Outer glow */
+  transition:
+    background 0.8s ease,
+    filter 0.8s ease;
+  z-index: 1; /* Same as particles */
+  pointer-events: none;
+  transform: rotate(var(--rotation, 0deg)); /* Allow individual rotation */
+  animation: floatAndRotate 15s infinite alternate ease-in-out; /* Gentle movement */
+}
+
+.crystal-large {
+  width: 150px;
+  height: 250px;
+  top: 10%;
+  left: 5%;
+  --rotation: 20deg;
+}
+
+.crystal-medium {
+  width: 100px;
+  height: 180px;
+  bottom: 15%;
+  right: 10%;
+  --rotation: -30deg;
+}
+
+.crystal-small {
+  width: 70px;
+  height: 120px;
+}
+
+.crystal-1 {
+  top: 5%;
+  left: 15%;
+  --rotation: -10deg;
+}
+
+.crystal-2 {
+  bottom: 5%;
+  left: 20%;
+  --rotation: 45deg;
+  animation-delay: 1s; /* Stagger animation */
+}
+
+.crystal-3 {
+  top: 20%;
+  right: 15%;
+  --rotation: 60deg;
+  animation-delay: 2s; /* Stagger animation */
+}
+
+.crystal-4 {
+  bottom: 30%;
+  left: 40%;
+  --rotation: -25deg;
+  animation-delay: 0.5s; /* Stagger animation */
+}
+
+/* Animation for Pulsing Glow */
+@keyframes pulseGlow {
+  0% {
+    box-shadow:
+      0 0 15px var(--glow-color),
+      0 0 30px var(--glow-color);
+  }
+  50% {
+    box-shadow:
+      0 0 25px var(--glow-color),
+      0 0 50px var(--glow-color);
+  }
+  100% {
+    box-shadow:
+      0 0 15px var(--glow-color),
+      0 0 30px var(--glow-color);
+  }
+}
+
+/* Animation for Floating and Rotating Crystals */
+@keyframes floatAndRotate {
+  0% {
+    transform: translateY(0) rotate(var(--rotation, 0deg));
+  }
+  50% {
+    transform: translateY(-20px) rotate(calc(var(--rotation, 0deg) + 5deg));
+  }
+  100% {
+    transform: translateY(0) rotate(var(--rotation, 0deg));
+  }
+}
+
+/* Main Content Section */
+.main-content {
+  padding: 40px 20px;
+  background-color: var(
+    --bg-gradient-start
+  ); /* Simple background for main content */
+  transition: background-color 0.8s ease;
+}
+
+.info-section {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  padding: 30px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.05
+  ); /* Very subtle transparent background */
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  transition:
+    background-color 0.8s ease,
+    box-shadow 0.8s ease;
+}
+
+.info-section h2 {
+  font-size: 2em;
+  color: var(--text-color);
+  margin-bottom: 15px;
+  text-shadow: 0 0 5px var(--glow-color);
+  transition: text-shadow 0.8s ease;
+}
+
+.info-section p {
+  line-height: 1.7;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2.5em;
+  }
+
+  .hero-section p {
+    font-size: 1em;
+    padding: 0 15px;
+  }
+
+  .hero-section .content {
+    padding: 20px 30px;
+  }
+
+  .crystal-large {
+    width: 100px;
+    height: 180px;
+  }
+
+  .crystal-medium {
+    width: 70px;
+    height: 120px;
+  }
+
+  .crystal-small {
+    width: 50px;
+    height: 80px;
+  }
+}
