@@ -1,20 +1,26 @@
-# Crystal Cavern Glow
+# 💎 Crystal Cavern Glow
 
 A highly immersive, atmospheric website template featuring a magical cavern aesthetic. This project demonstrates advanced front-end techniques including dynamic theme switching, particle systems, and interactive environmental effects.
 
+## 📸 Screenshots
+
+| Azure Day | Crystal Night |
+| :---: | :---: |
+| ![Azure Day](images/screenshots/home_light.PNG) | ![Crystal Night](images/screenshots/home_dark.PNG) |
+
 ## ✨ Features
 
-*   **Day/Night Theme Toggle**: Seamlessly transition between a bright "Azure Day" and a deep "Crystal Night" mode. Your preference is saved locally for future visits.
-*   **Dynamic Particle System**: Powered by `particles.js`, the background features shifting "crystal dust" that changes color and behavior based on the active theme.
-*   **Interactive Lantern Effect**: A soft, glowing light follows your cursor, acting as a guide through the darker themes of the cavern.
-*   **Ambient Soundscape**: An optional audio toggle provides cave ambience (dripping water, echoing wind) to deepen the sensory experience.
-*   **Parallax Depth**: Multiple layers of crystals move at varying speeds during scroll, creating a sense of physical space and depth.
-*   **Scroll Reveal Animations**: Content emerges elegantly from the shadows as you explore deeper into the page using the Intersection Observer API.
-*   **Responsive Design**: Optimized for a magical experience across desktops, tablets, and mobile devices.
+*   **🌓 Day/Night Theme Toggle**: Seamlessly transition between a bright "Azure Day" and a deep "Crystal Night" mode. Your preference is saved locally for future visits.
+*   **✨ Dynamic Particle System**: Powered by `particles.js`, the background features shifting "crystal dust" that changes color and behavior based on the active theme.
+*   **🔦 Interactive Lantern Effect**: A soft, glowing light follows your cursor, acting as a guide through the darker themes of the cavern.
+*   **🎵 Ambient Soundscape**: An optional audio toggle provides cave ambience (dripping water, echoing wind) to deepen the sensory experience.
+*   **🌌 Parallax Depth**: Multiple layers of crystals move at varying speeds during scroll, creating a sense of physical space and depth.
+*   **📜 Scroll Reveal Animations**: Content emerges elegantly from the shadows as you explore deeper into the page using the Intersection Observer API.
+*   **📱 Responsive Design**: Optimized for a magical experience across desktops, tablets, and mobile devices.
 
 ## 🚀 Getting Started
 
-### Prerequisites
+### 📋 Prerequisites
 
 To run this project, you will need to include the `particles.js` library in your HTML:
 ```html
