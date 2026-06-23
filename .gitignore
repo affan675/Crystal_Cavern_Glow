@@ -1,0 +1,743 @@
+# ============================================================================
+#  EVERYTHING .gitignore – The Ultimate Set
+#  --------------------------------------------------------------------------
+#  Use this as your default .gitignore. Remove sections you don't need.
+#  Lines starting with '#' are comments – keep them for documentation.
+# ============================================================================
+
+# ----------------------------------------------------------------------------
+#  OS / System files
+# ----------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+*.bak
+*.cache
+*.log
+*.pid
+*.seed
+*.pid.lock
+*.sock
+
+# ----------------------------------------------------------------------------
+#  Archives & compressed files (usually not needed in repo)
+# ----------------------------------------------------------------------------
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.pkg
+*.apk
+*.msi
+*.exe
+*.dll
+*.so
+*.dylib
+
+# ----------------------------------------------------------------------------
+#  IDE / Editor files
+# ----------------------------------------------------------------------------
+# === Visual Studio Code ===
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# === IntelliJ / PyCharm / WebStorm / etc. ===
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+.idea_modules/
+*.swp
+*.swo
+
+# === Sublime Text ===
+*.sublime-project
+*.sublime-workspace
+
+# === Vim ===
+*.vimrc
+*.viminfo
+*.swp
+*.swo
+
+# === Emacs ===
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+
+# === Eclipse ===
+.project
+.classpath
+.settings/
+*.pydevproject
+*.metadata
+*.tmp
+*.log
+
+# === Xcode ===
+*.xcodeproj
+*.xcworkspace
+*.xcuserstate
+DerivedData/
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcuserdatad
+
+# === Android Studio ===
+*.iml
+.gradle/
+local.properties
+.idea/
+*.iws
+*.ipr
+build/
+captures/
+.externalNativeBuild
+
+# === NetBeans ===
+nbproject/
+private/
+nb-configuration.xml
+*.nbattrs
+
+# === Brackets ===
+*.brackets.json
+
+# === Atom ===
+.atom/
+*.atom
+
+# === JDeveloper ===
+*.jdev
+*.jws
+
+# === RubyMine ===
+*.rbc
+/.idea/
+*.iml
+
+# === GoLand ===
+.idea/
+*.iml
+
+# === RStudio ===
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+
+# ----------------------------------------------------------------------------
+#  Languages / Frameworks
+# ----------------------------------------------------------------------------
+
+# ---- Python ----
+*.py[cod]
+*$py.class
+*.so
+*.pyd
+__pycache__/
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.tox/
+.nox/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+virtualenv/
+.conda_env/
+poetry.lock   # optional – remove if you want to commit lock files
+Pipfile.lock  # optional
+*.ipynb_checkpoints/
+
+# ---- Node.js / JavaScript ----
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json   # optional – remove if you want to commit
+yarn.lock           # optional
+.eslintcache
+.npm/
+*.tsbuildinfo
+.parcel-cache/
+dist/
+build/
+.next/
+out/
+.vercel/
+*.min.js
+*.min.css
+# If using TypeScript: *.d.ts.map
+
+# ---- Java ----
+*.class
+*.jar
+*.war
+*.ear
+*.log
+*.ctxt
+*.mtj
+*.tmp
+hs_err_pid*
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/
+.m2/
+# Gradle
+.gradle/
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
+gradle/wrapper/gradle-wrapper.properties
+gradle/wrapper/gradle-wrapper.jar
+gradle/wrapper/gradle-wrapper.properties
+gradlew
+gradlew.bat
+
+# ---- C/C++ ----
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+*.exp
+*.pdb
+*.ilk
+*.manifest
+*.out
+*.gch
+*.pch
+*.dep
+*.gcno
+*.gcda
+*.gcov
+Makefile
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps/
+Testing/
+*.cmake
+!CMakeLists.txt
+
+# ---- PHP ----
+*.log
+*.cache
+*.sql
+*.sqlite
+*.php~*
+*.phar
+composer.phar
+composer.lock   # optional
+vendor/
+bin/
+lib/
+clover.xml
+.phpunit.result.cache
+.php_cs.cache
+.php_cs
+.phpcs-cache
+.phpstan.neon
+.phpunit/
+.phpstorm.meta.php
+_ide_helper.php
+.vscode/
+.idea/
+.env
+.env.*
+*.local
+*.dist
+
+# ---- Ruby ----
+*.gem
+*.rbc
+/.config
+/coverage/
+InstalledFiles
+/pkg/
+/spec/reports/
+/spec/examples.txt
+/test/tmp/
+/test/version_tmp/
+/tmp/
+*.log
+*.pid
+*.lock
+.byebug_history
+.bundle/
+vendor/bundle/
+.ruby-version
+.ruby-gemset
+Gemfile.lock   # optional
+
+# ---- Go ----
+*.exe
+*.test
+*.prof
+*.out
+*.log
+*.cov
+*.coverage
+*.pkg
+*.so
+*.a
+*.[568vq]
+[568vq].out
+*.cgo1.go
+*.cgo2.c
+_cgo_defun.c
+_cgo_gotypes.go
+_cgo_export.*
+_testmain.go
+*.exe
+*.exe~
+*.dll
+*.dll~
+*.so
+*.so~
+*.dylib
+*.a
+*.test
+*.prof
+*.out
+*.log
+*.cov
+*.coverage
+go.sum   # optional
+vendor/
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ---- Rust ----
+target/
+**/*.rs.bk
+*.pdb
+*.exp
+*.lib
+*.ilk
+*.exe
+Cargo.lock   # optional (binary crates can commit, libraries ignore)
+
+# ---- Kotlin ----
+*.class
+*.log
+*.tmp
+*.build
+*.kotlin_module
+build/
+out/
+.idea/
+.gradle/
+*.iml
+local.properties
+*.jar
+*.war
+
+# ---- Swift ----
+*.xcodeproj
+*.xcworkspace
+DerivedData/
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcuserdata
+*.xcuserstate
+*.xcuserdata/
+*.xcassets
+*.xcdatamodeld/
+*.xctest
+Pods/
+Podfile.lock
+*.framework
+*.dSYM
+*.xcarchive
+
+# ---- Scala ----
+*.class
+*.log
+*.pid
+*.out
+*.java~
+*.scala~
+target/
+project/target/
+project/project/
+.idea/
+.vscode/
+*.iml
+.DS_Store
+*.metals/
+*.bloop/
+
+# ---- LaTeX ----
+*.aux
+*.bbl
+*.blg
+*.brf
+*.cb
+*.dvi
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.nlo
+*.nls
+*.out
+*.pdfsync
+*.synctex.gz
+*.toc
+*.xdv
+*.bcf
+*.run.xml
+*-blx.bib
+*.bbl
+*.blg
+*.run.xml
+*.xmpi
+*.mw
+*.mwe
+*.mtc*
+*.ptc*
+*.maf
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+*.loe
+*.slg
+*.slo
+*.sls
+
+# ---- Docker ----
+.dockerignore
+*.pid
+*.log
+.env
+*.env
+*.env.local
+*.env.*.local
+
+# ---- Terraform ----
+*.tfstate
+*.tfstate.*
+.terraform/
+*.tfplan
+*.tfvars
+*.tfvars.json
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+
+# ---- Ansible ----
+*.retry
+*.log
+*.vault
+*.vault.key
+.ansible/
+inventory/
+hosts
+group_vars/
+host_vars/
+roles/requirements.yml
+roles/*/files/
+roles/*/templates/
+roles/*/vars/
+roles/*/defaults/
+roles/*/meta/
+
+# ---- Vagrant ----
+.vagrant/
+*.box
+*.vagrant
+Vagrantfile.local
+.vagrant.d/
+.berkshelf/
+Berksfile.lock
+cookbooks/
+node.json
+.chef/
+
+# ----------------------------------------------------------------------------
+#  Databases & data files
+# ----------------------------------------------------------------------------
+*.db
+*.sqlite
+*.sqlite3
+*.dump
+*.sql
+*.psql
+*.csv (if not sample)
+*.tsv
+*.xls
+*.xlsx
+*.mdb
+*.accdb
+*.dbf
+*.frm
+*.ibd
+*.myd
+*.myi
+*.frm
+*.opt
+
+# ----------------------------------------------------------------------------
+#  Environment / secrets / config
+# ----------------------------------------------------------------------------
+.env
+.env.*
+*.env
+*.env.*
+!.env.example   # allow example files
+*.key
+*.pem
+*.crt
+*.csr
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.truststore
+*.secret
+*.vault
+*.vault.key
+config.local.*
+secrets.yaml
+secrets.yml
+credentials.json
+client_secret*.json
+service-account*.json
+*.pwd
+*.pass
+*.password
+*.token
+
+# ----------------------------------------------------------------------------
+#  Logs & temporary runtime files
+# ----------------------------------------------------------------------------
+logs/
+*.log
+*.pid
+*.lock
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+*.bak
+*.backup
+*.old
+*.orig
+*.save
+*.dump
+*.core
+*.heap
+*.hprof
+*.prof
+*.gc
+
+# ----------------------------------------------------------------------------
+#  Build outputs / dependency caches
+# ----------------------------------------------------------------------------
+build/
+dist/
+out/
+target/
+bin/
+obj/
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+*.exp
+*.pdb
+*.ilk
+*.manifest
+*.out
+*.gch
+*.pch
+*.dep
+*.gcno
+*.gcda
+*.gcov
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+*.class
+*.jar
+*.war
+*.ear
+*.sar
+*.zip
+*.tar.gz
+*.tgz
+*.deb
+*.rpm
+*.msi
+*.app
+*.dmg
+
+# ----------------------------------------------------------------------------
+#  Package manager caches
+# ----------------------------------------------------------------------------
+.npm/
+.yarn/
+.brew/
+.cargo/
+.gradle/
+.m2/
+.gem/
+.bundle/
+.pip/
+.poetry/
+.cache/
+.parcel-cache/
+.webpack/
+
+# ----------------------------------------------------------------------------
+#  Test / coverage reports
+# ----------------------------------------------------------------------------
+coverage/
+.nyc_output/
+.junit/
+test-reports/
+htmlcov/
+.tox/
+.nox/
+.pytest_cache/
+.unittest/
+.vscode-test/
+*.cover
+*.coverage
+*.lcov
+*.gcov
+*.junit.xml
+*.trx
+*.test-result
+*.result
+*.report
+
+# ----------------------------------------------------------------------------
+#  Documentation generated files
+# ----------------------------------------------------------------------------
+docs/_build/
+docs/api/
+site/
+*.epub
+*.mobi
+*.pdf (if generated)
+*.docx (if generated)
+*.odt (if generated)
+
+# ----------------------------------------------------------------------------
+#  Miscellaneous
+# ----------------------------------------------------------------------------
+*.local
+*.dev
+*.prod
+*.staging
+*.sample
+*.example
+!*.example   # include example files
+*.patch
+*.diff
+*.merge
+*.orig
+*.rej
+*.sublime*
+*.DS_Store?
+*.sw?
+*.swo?
+*~
+# ============================================================================
+#  END
+# ============================================================================
